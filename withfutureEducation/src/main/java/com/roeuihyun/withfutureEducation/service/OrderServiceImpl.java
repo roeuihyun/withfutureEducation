@@ -32,11 +32,11 @@ import lombok.RequiredArgsConstructor;
 @Service
 @Transactional
 @RequiredArgsConstructor
-public class OrderServiceImpl implements OrderService{
+//public class OrderServiceImpl implements OrderService{
+public class OrderServiceImpl {
 	
 	private final OrderStore orderStore;
 	
-	@Override
 	@Transactional
 	public OrderEO insertOrder(HashMap<String, Object> param) {
 		Optional<OrderEO> currentOrder = orderStore.findById( (OrderID)param.get("orderID") );
@@ -47,12 +47,10 @@ public class OrderServiceImpl implements OrderService{
 		return orderStore.findById( (OrderID)param.get("orderID") ).get();
 	}
 
-	@Override
 	public List<OrderEO> getAllOrder() {
 		return (List<OrderEO>) orderStore.findAll();
 	}
 
-	@Override
 	public OrderEO getOrderById(HashMap<String, Object> param) {
 		Optional<OrderEO> currentOrder = orderStore.findById( (OrderID)param.get("orderID") );
 		if( !currentOrder.isPresent() ) {
@@ -61,7 +59,6 @@ public class OrderServiceImpl implements OrderService{
 		return currentOrder.get();
 	}
 
-	@Override
 	@Transactional
 	public OrderEO putOrder(HashMap<String, Object> param) {
 		Optional<OrderEO> currentOrder = orderStore.findById( (OrderID)param.get("orderID") );
@@ -78,7 +75,6 @@ public class OrderServiceImpl implements OrderService{
 		return updateReturn;
 	}
 
-	@Override
 	@Transactional
 	public OrderEO deleteOrderById(HashMap<String, Object> param) {
 		Optional<OrderEO> currentOrder = orderStore.findById( (OrderID)param.get("orderID") );

@@ -32,11 +32,11 @@ import lombok.RequiredArgsConstructor;
 @Service
 @Transactional
 @RequiredArgsConstructor
-public class UserServiceImpl implements UserService{
+//public class UserServiceImpl implements UserService{
+public class UserServiceImpl {
 	
 	private final UserStore userStore;
 	
-	@Override
 	@Transactional
 	public UserEO insertUser(HashMap<String, Object> param) {
 		Optional<UserEO> currentUser = userStore.findById( (UserID)param.get("userID") );
@@ -47,12 +47,10 @@ public class UserServiceImpl implements UserService{
 		return userStore.findById( (UserID)param.get("userID") ).get();
 	}
 
-	@Override
 	public List<UserEO> getAllUser() {
 		return (List<UserEO>) userStore.findAll();
 	}
 
-	@Override
 	public UserEO getUserById(HashMap<String, Object> param) {
 		Optional<UserEO> currentUser = userStore.findById( (UserID)param.get("userID") );
 		if( !currentUser.isPresent() ) {
@@ -61,7 +59,6 @@ public class UserServiceImpl implements UserService{
 		return currentUser.get();
 	}
 
-	@Override
 	@Transactional
 	public UserEO putUser(HashMap<String, Object> param) {
 		Optional<UserEO> currentUser = userStore.findById( (UserID)param.get("userID") );
@@ -77,7 +74,6 @@ public class UserServiceImpl implements UserService{
 		return updateReturn;
 	}
 
-	@Override
 	@Transactional
 	public UserEO deleteUserById(HashMap<String, Object> param) {
 		Optional<UserEO> currentUser = userStore.findById( (UserID)param.get("userID") );

@@ -32,7 +32,7 @@ import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.roeuihyun.withfutureEducation.entity.UserEO;
 import com.roeuihyun.withfutureEducation.entityid.UserID;
-import com.roeuihyun.withfutureEducation.service.UserService;
+import com.roeuihyun.withfutureEducation.service.UserServiceImpl;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -45,7 +45,7 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class UserRestController {
 	
-	private final UserService userService;
+	private final UserServiceImpl userService;
 	
 	@ApiOperation(value = "USER 추가", notes = "USER 하나를 추가합니다.")
 	@PostMapping(produces = MediaTypes.HAL_JSON_VALUE)
