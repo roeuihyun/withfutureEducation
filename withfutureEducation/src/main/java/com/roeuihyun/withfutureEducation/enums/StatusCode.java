@@ -11,16 +11,15 @@
  * Updated Contents       : 
  * 2022.09.01 최초 작성
  *===============================================================================*/
-package com.roeuihyun.withfutureEducation;
+package com.roeuihyun.withfutureEducation.enums;
 
-import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.http.HttpStatus;
 
-@SpringBootTest
-class WithfutureEducationApplicationTests {
+public interface StatusCode {
 
-	@Test
-	void contextLoads() {
-	}
-
+	HttpStatus getHttpStatus();
+	int getBiz_code();
+    String name();
+    String getMessage();
+	
 }

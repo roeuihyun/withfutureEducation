@@ -11,16 +11,21 @@
  * Updated Contents       : 
  * 2022.09.01 최초 작성
  *===============================================================================*/
-package com.roeuihyun.withfutureEducation;
+package com.roeuihyun.withfutureEducation.entityid;
 
-import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
+import java.io.Serializable;
 
-@SpringBootTest
-class WithfutureEducationApplicationTests {
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-	@Test
-	void contextLoads() {
-	}
-
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class OrderID implements Serializable{
+	
+	private long order_id;
+	
+	private long user_id;
+	
 }

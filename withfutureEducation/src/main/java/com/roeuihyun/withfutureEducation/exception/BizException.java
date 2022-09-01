@@ -11,16 +11,22 @@
  * Updated Contents       : 
  * 2022.09.01 최초 작성
  *===============================================================================*/
-package com.roeuihyun.withfutureEducation;
+package com.roeuihyun.withfutureEducation.exception;
 
-import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
+import com.roeuihyun.withfutureEducation.enums.StatusCode;
 
-@SpringBootTest
-class WithfutureEducationApplicationTests {
+import lombok.Getter;
 
-	@Test
-	void contextLoads() {
+@Getter
+public class BizException extends RuntimeException {
+	
+	private static final long serialVersionUID = 1L;
+	private final StatusCode statusCode;
+	
+	public BizException ( StatusCode statusCode ) {
+		super(statusCode.getMessage());
+		this.statusCode = statusCode;
 	}
-
+	
 }
+

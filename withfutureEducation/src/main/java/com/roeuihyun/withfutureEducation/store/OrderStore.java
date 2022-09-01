@@ -11,16 +11,16 @@
  * Updated Contents       : 
  * 2022.09.01 최초 작성
  *===============================================================================*/
-package com.roeuihyun.withfutureEducation;
+package com.roeuihyun.withfutureEducation.store;
 
-import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-@SpringBootTest
-class WithfutureEducationApplicationTests {
+import com.roeuihyun.withfutureEducation.entity.OrderEO;
+import com.roeuihyun.withfutureEducation.entityid.OrderID;
 
-	@Test
-	void contextLoads() {
-	}
-
+@Repository
+public interface OrderStore extends JpaRepository<OrderEO, OrderID>{
+	
 }
+

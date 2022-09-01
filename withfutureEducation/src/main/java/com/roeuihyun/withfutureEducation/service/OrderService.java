@@ -11,16 +11,23 @@
  * Updated Contents       : 
  * 2022.09.01 최초 작성
  *===============================================================================*/
-package com.roeuihyun.withfutureEducation;
+package com.roeuihyun.withfutureEducation.service;
 
-import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
+import java.util.HashMap;
+import java.util.List;
 
-@SpringBootTest
-class WithfutureEducationApplicationTests {
+import com.roeuihyun.withfutureEducation.entity.OrderEO;
 
-	@Test
-	void contextLoads() {
-	}
+public interface OrderService {
+
+	OrderEO insertOrder(HashMap<String, Object> param);
+
+	List<OrderEO> getAllOrder();
+
+	OrderEO getOrderById(HashMap<String, Object> param);
+
+	OrderEO putOrder(HashMap<String, Object> param);
+
+	OrderEO deleteOrderById(HashMap<String, Object> param);
 
 }
