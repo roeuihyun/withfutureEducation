@@ -31,7 +31,7 @@ import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.roeuihyun.withfutureEducation.entity.OrderEO;
 import com.roeuihyun.withfutureEducation.entityid.OrderID;
-import com.roeuihyun.withfutureEducation.service.OrderServiceImpl;
+import com.roeuihyun.withfutureEducation.service.OrderService;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -44,7 +44,7 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class OrderRestController {
 	
-	private final OrderServiceImpl orderService;
+	private final OrderService orderService;
 	
 	@ApiOperation(value = "주문 추가", notes = "주문 하나를 추가합니다.")
 	@PostMapping(produces = MediaTypes.HAL_JSON_VALUE)

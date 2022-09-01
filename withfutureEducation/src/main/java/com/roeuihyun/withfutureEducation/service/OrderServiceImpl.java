@@ -32,8 +32,7 @@ import lombok.RequiredArgsConstructor;
 @Service
 @Transactional
 @RequiredArgsConstructor
-//public class OrderServiceImpl implements OrderService{
-public class OrderServiceImpl {
+public class OrderServiceImpl implements OrderService{
 	
 	private final OrderStore orderStore;
 	

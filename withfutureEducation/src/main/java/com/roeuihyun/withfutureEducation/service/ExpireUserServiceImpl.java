@@ -32,7 +32,7 @@ import lombok.RequiredArgsConstructor;
 @Service
 @Transactional
 @RequiredArgsConstructor
-public class UserServiceImpl implements UserService{
+public class ExpireUserServiceImpl implements UserService{
 	
 	private final UserStore userStore;
 	

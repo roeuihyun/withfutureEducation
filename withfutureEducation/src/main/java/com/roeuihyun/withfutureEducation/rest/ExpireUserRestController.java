@@ -40,16 +40,16 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 
-@Api(value = "사용자 API" , tags = {"사용자 API"} )
+@Api(value = "만료된 사용자 API" , tags = {"만료된 사용자 API"} )
 @RestController
-@RequestMapping("/Users")
-public class UserRestController {
+@RequestMapping("/ExpireUsers")
+public class ExpireUserRestController {
 	
 	@Autowired
-	@Qualifier("userServiceImpl")
+	@Qualifier("expireUserServiceImpl")
 	private UserService userService;
 	
-	@ApiOperation(value = "USER 추가", notes = "USER 하나를 추가합니다.")
+	@ApiOperation(value = "EXPIRE USER 추가", notes = "EXPIRE USER 하나를 추가합니다.")
 	@PostMapping(produces = MediaTypes.HAL_JSON_VALUE)
 	@ResponseBody
 	public ResponseEntity<?> insertUser(@RequestBody UserEO userEO) {
@@ -60,7 +60,7 @@ public class UserRestController {
 		return ResponseEntity.ok().body(userService.insertUser(param));
 	}
 	
-	@ApiOperation(value = "USER 전체 조회", notes = "USER 전체를 조회합니다.")
+	@ApiOperation(value = "EXPIRE USER 전체 조회", notes = "EXPIRE USER 전체를 조회합니다.")
 	@GetMapping(produces = MediaTypes.HAL_JSON_VALUE)
 	@ResponseBody
 	public ResponseEntity<?> getAllUser(
@@ -72,7 +72,7 @@ public class UserRestController {
 		return ResponseEntity.ok().body(PageInfo.of(userService.getAllUser()));
 	}
 	
-	@ApiOperation(value = "USER 조회", notes = "USER 하나를 조회합니다.")
+	@ApiOperation(value = "EXPIRE USER 조회", notes = "EXPIRE USER 하나를 조회합니다.")
 	@GetMapping(value="/{user_id}", produces = MediaTypes.HAL_JSON_VALUE)
 	@ResponseBody
 	public ResponseEntity<?> getUserById(@PathVariable Long user_id) {
@@ -82,7 +82,7 @@ public class UserRestController {
 		return ResponseEntity.ok().body(userService.getUserById(param));
 	}
 	
-	@ApiOperation(value = "USER 수정", notes = "USER 하나를 수정합니다.")
+	@ApiOperation(value = "EXPIRE USER 수정", notes = "EXPIRE USER 하나를 수정합니다.")
 	@PutMapping(produces = MediaTypes.HAL_JSON_VALUE)
 	@ResponseBody
 	public ResponseEntity<?> putUser( @RequestBody UserEO userEO) {
@@ -93,7 +93,7 @@ public class UserRestController {
 		return ResponseEntity.ok().body(userService.putUser(param));
 	}
 	
-	@ApiOperation(value = "USER 삭제", notes = "USER 하나를 삭제합니다.")
+	@ApiOperation(value = "EXPIRE USER 삭제", notes = "EXPIRE USER 하나를 삭제합니다.")
 	@DeleteMapping(value="/{user_id}", produces = MediaTypes.HAL_JSON_VALUE)
 	@ResponseBody
 	public ResponseEntity<?> deleteUserById(@PathVariable Long user_id) {
